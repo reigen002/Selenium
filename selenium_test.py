@@ -1,13 +1,14 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
-# Your code continues here...
+# Create ChromeOptions instance
+options = Options()
 
+# Initialize WebDriver with Service and Options
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-# Set up Webdriver using WebDriver Manager to automatically manage ChromeDriver
-driver = webdriver.Chrome(ChromeDriverManager().install())
 
 # Open Google
 driver.get("https://www.google.com")
